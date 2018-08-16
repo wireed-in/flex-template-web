@@ -1,11 +1,11 @@
 import React from 'react';
-// import { types as sdkTypes } from '../../util/sdkLoader';
+import { types as sdkTypes } from '../../util/sdkLoader';
 import classNames from 'classnames';
 import { getPlacePredictions, getPlaceDetails, locationBounds } from '../../util/googleMaps';
 import { userLocation } from '../../util/maps';
 import css from './LocationAutocompleteInput.css';
 
-// const { LatLng: SDKLatLng, LatLngBounds: SDKLatLngBounds } = sdkTypes;
+const { LatLng: SDKLatLng, LatLngBounds: SDKLatLngBounds } = sdkTypes;
 
 export const CURRENT_LOCATION_ID = 'current-location';
 const CURRENT_LOCATION_BOUNDS_DISTANCE = 1000; // meters
@@ -17,22 +17,22 @@ const CURRENT_LOCATION_BOUNDS_DISTANCE = 1000; // meters
 export const defaultPredictions = [
   // Examples:
   // Current user location from the browser geolocation API
-  // {
-  //   id: CURRENT_LOCATION_ID,
-  //   predictionPlace: {},
-  // },
+  {
+    id: CURRENT_LOCATION_ID,
+    predictionPlace: {},
+  },
   // Helsinki
-  // {
-  //   id: 'default-helsinki',
-  //   predictionPlace: {
-  //     address: 'Helsinki, Finland',
-  //     origin: new SDKLatLng(60.16985, 24.93837),
-  //     bounds: new SDKLatLngBounds(
-  //       new SDKLatLng(60.29783, 25.25448),
-  //       new SDKLatLng(59.92248, 24.78287)
-  //     ),
-  //   },
-  // },
+  {
+    id: 'default-helsinki',
+    predictionPlace: {
+      address: 'Helsinki, Finland',
+      origin: new SDKLatLng(60.16985, 24.93837),
+      bounds: new SDKLatLngBounds(
+        new SDKLatLng(60.29783, 25.25448),
+        new SDKLatLng(59.92248, 24.78287)
+      ),
+    },
+  },
 ];
 
 // When displaying data from the Google Maps Places API, and
